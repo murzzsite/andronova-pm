@@ -1,0 +1,37 @@
+{
+  "siteName": "Елена Андронова",
+  "siteUrl": "https://kosmetic.pro",
+  "lang": "ru",
+  "repo": "murzzsite/andronova-pm",
+  "ref": "XS3CHUYDMR",
+  "workerUrl": "https://lead-relay.leestygpt.workers.dev",
+  "blogTitle": "Блог",
+  "blogDescription": "Полезные статьи от Елена Андронова",
+  "homeTitle": "Полезные статьи",
+  "author": {
+    "name": "Елена Андронова",
+    "jobTitle": "",
+    "type": "Person"
+  },
+  "ctaTitle": "Остались вопросы?",
+  "ctaText": "Оставьте заявку — разберём вашу ситуацию и подскажем следующий шаг.",
+  "ctaButton": "Оставить заявку",
+  "ctaUrl": "/#contact",
+  "disclaimer": "",
+  "telegramNotify": false,
+  "cadenceDays": 7,
+  "homeLatest": 3,
+  "staticPages": [
+    "/"
+  ],
+  "indexNowKey": "53ababb80d9c5b98e1054b7aaa53dc74",
+  "previewSecret": "47cc8bae1f24c630",
+  "theme": {
+    "accent": "var(--accent)",
+    "bg": "var(--bg)",
+    "surface": "var(--surface)",
+    "ink": "var(--ink)",
+    "soft": "var(--muted)",
+    "accent-soft": "color-mix(in srgb, var(--accent) 10%, #ffffff)"
+  }
+}

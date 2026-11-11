@@ -53,6 +53,7 @@ const LEAD_ENDPOINT = 'https://lead-relay.leestygpt.workers.dev/lead/XS3CHUYDMR'
 
     if (payload._gotcha) return;
 
+    if (!payload.consent) { alert('Отметьте согласие с политикой конфиденциальности'); return; }
     if (!payload.name || !payload.phone || payload.phone.replace(/\D/g, '').length < 11) {
       alert('Заполните имя и телефон');
       return;
@@ -290,4 +291,8 @@ const LEAD_ENDPOINT = 'https://lead-relay.leestygpt.workers.dev/lead/XS3CHUYDMR'
       if (pick && comment && !comment.value) comment.value = pick;
     });
   }
+  // cookie notice
+  const cookie = document.getElementById('cookie');
+  try { if (cookie && !localStorage.getItem('cookieOk')) cookie.hidden = false; } catch (e) { if (cookie) cookie.hidden = false; }
+  document.getElementById('cookieOk')?.addEventListener('click', () => { cookie.hidden = true; try { localStorage.setItem('cookieOk', '1'); } catch (e) {} });
 })();
