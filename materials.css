@@ -1,0 +1,56 @@
+/* Материалы проекта: единый стиль документов, цвета сайта kosmetic.pro */
+:root { --bg:#ffd3b0; --surface:#ffc6a0; --ink:#1b120e; --muted:#5a3724; --white:#fff; --mint:#bde3da; --f-display:'Prata','Onest',serif; --f-text:'Onest',system-ui,sans-serif; --pad:clamp(16px,3vw,32px); }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:400 1.0625rem/1.6 var(--f-text); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+a { color:inherit; text-underline-offset:4px; }
+img { max-width:100%; height:auto; display:block; }
+p { margin:0 0 12px; } ul, ol { margin:0; padding:0; }
+:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
+
+.doc-bar { position:sticky; top:0; z-index:20; background:var(--bg); }
+.doc-bar__inner { max-width:1040px; margin:0 auto; padding:12px var(--pad); display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.doc-bar__back { font-weight:600; text-decoration:none; }
+.doc-bar__actions { display:flex; gap:10px; flex-wrap:wrap; }
+.btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 20px; background:var(--ink); color:var(--bg); border:0; font:600 .95rem/1.2 var(--f-text); text-decoration:none; cursor:pointer; transition:transform .25s cubic-bezier(.2,.7,.1,1); }
+.btn:hover { transform:translateY(-2px); } .btn:active { transform:scale(.98); }
+.btn--ghost { background:var(--surface); color:var(--ink); }
+
+.container { max-width:1040px; margin:0 auto; padding:0 var(--pad) 96px; }
+.doc-hero { padding:48px 0 24px; }
+.doc-hero h1 { font:400 clamp(2rem,5.5vw,3.6rem)/1.05 var(--f-display); margin:0 0 20px; max-width:20ch; }
+.doc-hero__lead { max-width:60ch; font-size:1.2rem; line-height:1.5; }
+.toc { margin-top:28px; display:flex; flex-wrap:wrap; gap:10px; }
+.toc a { background:var(--surface); padding:10px 16px; text-decoration:none; font-weight:500; transition:background-color .2s; }
+.toc a:hover { background:var(--white); }
+.doc-section { padding-top:64px; }
+.doc-section h2 { font:400 clamp(1.6rem,3.6vw,2.4rem)/1.1 var(--f-display); margin:0 0 16px; max-width:24ch; }
+.doc-section__lead { max-width:62ch; margin-bottom:20px; }
+.card { background:var(--surface); padding:clamp(18px,3vw,28px); margin:14px 0; }
+.card--white { background:var(--white); } .card--mint { background:var(--mint); }
+.card__title { font-weight:600; font-size:1.15rem; margin-bottom:10px; }
+.card__note { color:var(--muted); font-size:.95rem; margin-top:12px; margin-bottom:0; }
+.tag { display:inline-block; font-weight:600; margin-bottom:8px; }
+.draft { display:inline-block; background:var(--white); padding:1px 8px; font-size:.8rem; font-weight:600; vertical-align:middle; margin-left:6px; }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; } .grid-3 .card { margin:0; }
+.grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; } .grid-2 .card { margin:0; }
+.ul { display:grid; gap:10px; list-style:none; } .ul li { padding-left:22px; position:relative; }
+.ul li::before { content:''; position:absolute; left:0; top:.65em; width:8px; height:8px; background:var(--ink); }
+.ol { display:grid; gap:12px; padding-left:1.4em; }
+.tbl-wrap { overflow-x:auto; } .tbl { width:100%; border-collapse:collapse; }
+.tbl th, .tbl td { text-align:left; vertical-align:top; padding:10px 14px 10px 0; } .tbl th { font-weight:600; }
+.msg { background:var(--white); padding:16px 18px; margin:10px 0; white-space:pre-line; }
+.msg__who { display:block; font-weight:600; font-size:.85rem; color:var(--muted); margin-bottom:6px; }
+.big { font:400 clamp(2.4rem,7vw,4.5rem)/1 var(--f-display); }
+.ph { background:var(--white); padding:2px 6px; font-weight:600; }
+.steps { display:grid; gap:14px; counter-reset:s; list-style:none; }
+.steps li { background:var(--surface); padding:18px 20px 18px 64px; position:relative; counter-increment:s; }
+.steps li::before { content:counter(s); position:absolute; left:20px; top:14px; font:400 1.8rem/1 var(--f-display); }
+.footer-note { margin-top:64px; color:var(--muted); font-size:.95rem; max-width:62ch; }
+
+@media (max-width:860px) { .grid-3, .grid-2 { grid-template-columns:1fr; } }
+@media (max-width:640px) {
+  .tbl, .tbl tbody, .tbl tr, .tbl td { display:block; } .tbl tr:first-child { display:none; }
+  .tbl tr { padding:10px 0; } .tbl td { padding:2px 0; } .tbl td[data-label]::before { content:attr(data-label)': '; font-weight:600; }
+}
+@media print { .doc-bar { display:none; } body { background:#fff; } .card, .toc a, .steps li { background:#f3f3f3; } }
+@media (prefers-reduced-motion: reduce) { .btn { transition:none; } }
