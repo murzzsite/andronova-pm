@@ -70,6 +70,7 @@ const LEAD_ENDPOINT = 'https://lead-relay.leestygpt.workers.dev/lead/XS3CHUYDMR'
       });
       if (!resp.ok) throw new Error('HTTP ' + resp.status);
       btn.textContent = 'Заявка отправлена. Перезвоню в ближайшее время';
+      try { if (window.ym) ym(114233206, 'reachGoal', 'lead'); } catch (e) {}
       form.reset();
     } catch (err) {
       console.error(err);
@@ -119,7 +120,7 @@ const LEAD_ENDPOINT = 'https://lead-relay.leestygpt.workers.dev/lead/XS3CHUYDMR'
   const revealSel = '.hero__lead, .hero__act, .hero__proof, .why__item, .zone, .zone__list li, .chip, .calc__text, .calc__result, .calc__range, ' +
     '.prices__sub, .prices__list li, .prices__big, .prices__text, .process__lead, .slip__h, .slip__row, .slip__total, ' +
     '.worth__photo, .worth__text, .worth__list li, .letter__meta, .letter__body p, .letter__sign, .faq__facts li, .faq__item, .faq__act, ' +
-    '.faq__tall, .faq__sq, .contact__lead, .field, .form__note, .contact__list li, .contact__card';
+    '.faq__tall, .faq__sq, .works__lead, .works__item, .contact__lead, .field, .form__note, .contact__list li, .contact__card';
   const items = [...document.querySelectorAll(revealSel)];
   // stagger inside the same parent
   const seen = new Map();
@@ -291,8 +292,15 @@ const LEAD_ENDPOINT = 'https://lead-relay.leestygpt.workers.dev/lead/XS3CHUYDMR'
       if (pick && comment && !comment.value) comment.value = pick;
     });
   }
+  // Yandex Metrika: loads only after the cookie notice is accepted
+  const YM_ID = 114233206;
+  const loadMetrika = () => {
+    if (window.__ymLoaded) return; window.__ymLoaded = true;
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date(); k = e.createElement(t); a = e.getElementsByTagName(t)[0]; k.async = 1; k.src = r; a.parentNode.insertBefore(k, a); })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+    ym(YM_ID, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  };
   // cookie notice
   const cookie = document.getElementById('cookie');
-  try { if (cookie && !localStorage.getItem('cookieOk')) cookie.hidden = false; } catch (e) { if (cookie) cookie.hidden = false; }
-  document.getElementById('cookieOk')?.addEventListener('click', () => { cookie.hidden = true; try { localStorage.setItem('cookieOk', '1'); } catch (e) {} });
+  try { if (localStorage.getItem('cookieOk')) loadMetrika(); else if (cookie) cookie.hidden = false; } catch (e) { if (cookie) cookie.hidden = false; }
+  document.getElementById('cookieOk')?.addEventListener('click', () => { cookie.hidden = true; try { localStorage.setItem('cookieOk', '1'); } catch (e) {} loadMetrika(); });
 })();
