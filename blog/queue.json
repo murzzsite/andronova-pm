@@ -1,7 +1,23 @@
 {
   "site": "https://kosmetic.pro",
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "awaiting": [
+    {
+      "slug": "mezhresnichka-ili-strelka-kak-vybrat",
+      "path": "articles/mezhresnichka-ili-strelka-kak-vybrat.md",
+      "title": "Межресничка или стрелка: как выбрать вариант перманентного макияжа глаз",
+      "description": "Перманентный макияж глаз в Мытищах: чем отличаются межресничное пространство, стрелка и растушёвка, сколько они стоят и как выбрать свой вариант.",
+      "reading_time": "9 мин чтения",
+      "preview_url": "https://kosmetic.pro/blog/preview/4e75c9cd05f4/mezhresnichka-ili-strelka-kak-vybrat/"
+    },
+    {
+      "slug": "permanentnyj-makiyazh-gub-mytishchi",
+      "path": "articles/permanentnyj-makiyazh-gub-mytishchi.md",
+      "title": "Перманентный макияж губ в Мытищах: кому подходит, как выбирают оттенок и что спросить у мастера",
+      "description": "Перманентный макияж губ в Мытищах: кому подходит, как выбирают контур и оттенок, сколько стоит процедура и коррекция, о чём спросить мастера.",
+      "reading_time": "10 мин чтения",
+      "preview_url": "https://kosmetic.pro/blog/preview/60957a91e4f1/permanentnyj-makiyazh-gub-mytishchi/"
+    },
     {
       "slug": "permanentnyj-makiyazh-brovej-mytishchi-cena",
       "path": "articles/skolko-stoit-permanentnyj-makiyazh-brovej-mytishchi.md",
