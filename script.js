@@ -70,7 +70,7 @@ const LEAD_ENDPOINT = 'https://lead-relay.leestygpt.workers.dev/lead/XS3CHUYDMR'
       });
       if (!resp.ok) throw new Error('HTTP ' + resp.status);
       btn.textContent = 'Заявка отправлена. Перезвоню в ближайшее время';
-      try { if (window.ym) ym(114233206, 'reachGoal', 'lead'); } catch (e) {}
+      try { if (window.ym) { ym(114233206, 'reachGoal', 'lead'); ym(114233206, 'reachGoal', 'lead_submit'); } } catch (e) {}
       form.reset();
     } catch (err) {
       console.error(err);
