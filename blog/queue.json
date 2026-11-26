@@ -1,20 +1,21 @@
 {
   "site": "https://kosmetic.pro",
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "awaiting": [],
   "scheduled": [
     {
       "slug": "permanentnyj-makiyazh-gub-mytishchi",
       "title": "Перманентный макияж губ в Мытищах: кому подходит, как выбирают оттенок и что спросить у мастера",
       "date": "2026-12-03"
-    },
-    {
-      "slug": "permanentnyj-makiyazh-brovej-mytishchi-cena",
-      "title": "Сколько стоит перманентный макияж бровей в Мытищах и из чего складывается цена",
-      "date": "2026-11-26"
     }
   ],
   "published": [
+    {
+      "slug": "permanentnyj-makiyazh-brovej-mytishchi-cena",
+      "title": "Сколько стоит перманентный макияж бровей в Мытищах и из чего складывается цена",
+      "url": "https://kosmetic.pro/blog/permanentnyj-makiyazh-brovej-mytishchi-cena/",
+      "date": "2026-11-26"
+    },
     {
       "slug": "mezhresnichka-ili-strelka-kak-vybrat",
       "title": "Межресничка или стрелка: как выбрать вариант перманентного макияжа глаз",
